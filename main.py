@@ -73,6 +73,8 @@ class Comment(db.Model):
     author = relationship("User", back_populates="comments")
     blog_post = relationship("BlogPost", back_populates="comments")
 
+db.create_all()
+
 ## DECORATORS
 def admin_only(func):
     @functools.wraps(func)
